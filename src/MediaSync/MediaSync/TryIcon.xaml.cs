@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,10 @@ namespace MediaSync {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class TryIcon : Window {
-        public TryIcon() {
+        ILogger<TryIcon> logs;
+        public TryIcon(ILogger<TryIcon> logs) {
+            this.logs = logs;
+            logs.LogInformation("Working?");
             InitializeComponent();
         }
     }
